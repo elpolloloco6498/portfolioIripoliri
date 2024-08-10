@@ -6,5 +6,5 @@ module.exports = {
     title: `Iripoliri`,
     siteUrl: `https://www.yourdomain.tld`
   },
-  plugins: ["gatsby-plugin-sitemap"]
+  plugins: ["gatsby-plugin-sitemap", "gatsby-plugin-postcss"]
 };
