@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { AdvancedVideo } from '@cloudinary/react';
 import {Cloudinary} from "@cloudinary/url-gen";
 import logo from "../images/icon.png"
+import instagram from "../images/instagram.svg"
 import portrait from "../images/portrait.jpeg"
 
 const IndexPage = () => {
@@ -34,6 +35,21 @@ I specialize in visual storytelling, using creative camera angles and dynamic vi
     ]
   }
 
+  const prices = [
+    {
+      "name": "Animated video",
+      "price": "100$ / min"
+    },
+    {
+      "name": "Reel",
+      "price": "35$"
+    },
+    {
+      "name": "Meme",
+      "price": "15$"
+    }
+  ]
+
   const url = "https://res.cloudinary.com/dracbyle6/image/upload/v1716653247/samples/landscapes/beach-boat.jpg"
 
   const myImage = cld.image('sample');
@@ -51,7 +67,7 @@ I specialize in visual storytelling, using creative camera angles and dynamic vi
         <AdvancedVideo 
           width="240"
           className={`
-            absolute top-0 left-0 transition-opacity duration-400 ease-in-out z-0
+            absolute top-0 left-0 transition-opacity duration-400 ease-in-out z-10
             ${isHovered ? 'opacity-100' : 'opacity-0'}
           `}
           cldVid={cld.video(videoId).quality('auto')}
@@ -78,14 +94,14 @@ I specialize in visual storytelling, using creative camera angles and dynamic vi
   };
 
   return (
-    <main className="p-20">
-      <nav className="flex justify-between">
+    <main className="px-5 pt-5 md:px-20">
+      <nav className="flex flex-col justify-between md:flex-row">
         <p>Iripoliri</p>
         <ul>
-          <li>HOME</li>
-          <li>PROJECT</li>
-          <li>ABOUT</li>
-          <li>CONTACT</li>
+          <li><a href="#about">ABOUT</a></li>
+          <li><a href="#projects">PROJECTS</a></li>
+          <li><a href="#pricing">PRICING</a></li>
+          <li><a href="#contact">CONTACT</a></li>
         </ul>
       </nav>
       
@@ -99,11 +115,11 @@ I specialize in visual storytelling, using creative camera angles and dynamic vi
         />TIVE LISA
         </h1>
 
-        <h1 className='text-3xl'>Who am I ?</h1>
-        <p className='w-1/3'>{profilDescription}</p>
+        <h1 id="about" className='text-3xl'>Who am I ?</h1>
+        <p className='w-full text-justify md:w-1/3'>{profilDescription}</p>
 
-        <h1 className="text-2xl">Lisa content</h1>
-        <div className="flex flex-wrap gap-10">
+        <h1 id="projects" className="text-2xl">Lisa content</h1>
+        <div className="flex flex-wrap gap-10 justify-center">
         {
           videos.regular.map(videoId => (
             <VideoComponent key={videoId} videoId={videoId} />
@@ -111,7 +127,7 @@ I specialize in visual storytelling, using creative camera angles and dynamic vi
         }
         </div>
         <h1 className="text-2xl">Animated content</h1>
-        <div className="flex flex-wrap gap-10">
+        <div className="flex flex-wrap gap-10 justify-center">
         {
           videos.animatedDesign.map(videoId => (
             <VideoComponent key={videoId} videoId={videoId} />
@@ -120,13 +136,44 @@ I specialize in visual storytelling, using creative camera angles and dynamic vi
         </div>
 
         <h1 className="text-2xl">Reviews</h1>
-        <div className="flex flex-wrap gap-10">
+        <div className="flex flex-wrap gap-10 justify-center">
         {
           videos.regular.map(videoId => (
             <div className="bg-black w-[240px] h-[420px]"></div>
           ))
         }
         </div>
+        
+        <h1 className="text-2xl">Pricing</h1>
+        <div id="pricing" className='flex gap-20 flex-col md:flex-row'>
+        {
+          prices.map(price => (
+            <div id="price-card" className='bg-slate-500 p-5 rounded-lg text-slate-200 w-full md:w-1/3'>
+              <p className='text-2xl'>{price.name}</p>
+              <span className='text-4xl'>{price.price}</span>
+            </div>
+          ))
+        }
+        </div>
+
+        <div id="contact" className='flex gap-5 items-center'>
+          <a href="https://www.instagram.com/iripoliri/">
+            <div className='flex items-center gap-2'>
+              <img width={40} src={instagram}/>
+              <p className='font-bold'>@Iripoliri</p>
+            </div>
+          </a>
+
+          <a href="mailto:irina@iripoliri.com">
+            <div className='bg-slate-400 px-10 py-4 rounded-lg'>
+              <span className='font-bold'>irina@iripoliri.com</span>
+            </div>
+          </a>
+        </div>
+
+        <footer className='bg-slate-400 px-2 py-5 mt-5 w-full'>
+            <p>Copyright © 2024, Irina Poletaeva</p>
+        </footer>
       </div>
       
     </main>
