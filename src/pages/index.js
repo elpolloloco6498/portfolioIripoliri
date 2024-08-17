@@ -3,7 +3,15 @@ import { AdvancedVideo } from '@cloudinary/react';
 import {Cloudinary} from "@cloudinary/url-gen";
 import logo from "../images/icon.png"
 import instagram from "../images/instagram.svg"
+import linkedin from "../images/linkedin.png"
 import portrait from "../images/portrait.jpeg"
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination } from 'swiper/modules';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
 const IndexPage = () => {
   const cld = new Cloudinary({
@@ -55,19 +63,48 @@ I specialize in visual storytelling, using creative camera angles and dynamic vi
   const myImage = cld.image('sample');
   const [hoveredVideoId, setHoveredVideoId] = useState(null);
 
+  const VideoGallery = ({ videos }) => {
+    return (
+      <>
+        <div className="hidden md:flex md:flex-wrap md:gap-10 md:justify-center">
+          {videos.map(videoId => (
+            <VideoComponent key={videoId} videoId={videoId} />
+          ))}
+        </div>
+        <div className="w-full md:hidden">
+          <Swiper
+            modules={[Navigation, Pagination]}
+            spaceBetween={5}
+            slidesPerView={1}
+            navigation
+            pagination={{ clickable: true }}
+            className="mySwiper"
+          >
+            {videos.map((videoId) => (
+              <SwiperSlide key={videoId}>
+                <div className="flex justify-center items-center h-full w-full">
+                  <VideoComponent videoId={videoId} />
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
+      </>
+    )
+  }
+
   const VideoComponent = ({ videoId }) => {
     const [isHovered, setIsHovered] = useState(false);
   
     return (
       <div 
-        className="video-container relative w-[240px] h-[420px]"
+        className="video-container relative w-[240px] h-[420px] max-w-full"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
         <AdvancedVideo 
-          width="240"
           className={`
-            absolute top-0 left-0 transition-opacity duration-400 ease-in-out z-10
+            absolute top-0 left-0 transition-opacity duration-400 ease-in-out z-20
             ${isHovered ? 'opacity-100' : 'opacity-0'}
           `}
           cldVid={cld.video(videoId).quality('auto')}
@@ -94,87 +131,80 @@ I specialize in visual storytelling, using creative camera angles and dynamic vi
   };
 
   return (
-    <main className="px-5 pt-5 md:px-20">
-      <nav className="flex flex-col justify-between md:flex-row">
-        <p>Iripoliri</p>
-        <ul>
-          <li><a href="#about">ABOUT</a></li>
-          <li><a href="#projects">PROJECTS</a></li>
-          <li><a href="#pricing">PRICING</a></li>
-          <li><a href="#contact">CONTACT</a></li>
-        </ul>
-      </nav>
-      
-      <div className="flex flex-col items-center gap-20">
-        <h1 className="flex items-center text-6xl text-center">
-        CREA<img
-          alt="Gatsby G Logo"
-          src={portrait}
-          width={100}
-          className="rounded-t-full rounded-r-full mx-5"
-        />TIVE LISA
-        </h1>
+    <main className="w-full md:px-20 max-w-full">
+      <div className="flex flex-col p-5 gap-10 w-full md:gap-20">
+        <nav className="flex flex-col justify-between md:flex-row">
+          <p>Iripoliri</p>
+          <ul>
+            <li><a href="#about">ABOUT</a></li>
+            <li><a href="#projects">PROJECTS</a></li>
+            <li><a href="#pricing">PRICING</a></li>
+            <li><a href="#contact">CONTACT</a></li>
+          </ul>
+        </nav>
 
-        <h1 id="about" className='text-3xl'>Who am I ?</h1>
-        <p className='w-full text-justify md:w-1/3'>{profilDescription}</p>
-
-        <h1 id="projects" className="text-2xl">Lisa content</h1>
-        <div className="flex flex-wrap gap-10 justify-center">
-        {
-          videos.regular.map(videoId => (
-            <VideoComponent key={videoId} videoId={videoId} />
-          ))
-        }
-        </div>
-        <h1 className="text-2xl">Animated content</h1>
-        <div className="flex flex-wrap gap-10 justify-center">
-        {
-          videos.animatedDesign.map(videoId => (
-            <VideoComponent key={videoId} videoId={videoId} />
-          ))
-        }
+        <div className='w-full'>
+          <h1 className="flex items-center justify-center text-2xl text-center md:text-6xl">
+          IRIPOLIRI<img
+            alt="Gatsby G Logo"
+            src={portrait}
+            className="rounded-t-full rounded-r-full mx-5 w-1/4"
+          />CREATIVE AGENCY
+          </h1>
         </div>
 
-        <h1 className="text-2xl">Reviews</h1>
-        <div className="flex flex-wrap gap-10 justify-center">
-        {
-          videos.regular.map(videoId => (
-            <div className="bg-black w-[240px] h-[420px]"></div>
-          ))
-        }
-        </div>
-        
-        <h1 className="text-2xl">Pricing</h1>
-        <div id="pricing" className='flex gap-20 flex-col md:flex-row'>
-        {
-          prices.map(price => (
-            <div id="price-card" className='bg-slate-500 p-5 rounded-lg text-slate-200 w-full md:w-1/3'>
-              <p className='text-2xl'>{price.name}</p>
-              <span className='text-4xl'>{price.price}</span>
-            </div>
-          ))
-        }
+        <div className='flex flex-col w-full gap-10'>
+          <h1 id="about" className='text-3xl text-center'>Who am I ?</h1>
+          <p className='w-full text-justify md:w-1/3'>{profilDescription}</p>
+
+          <h1 id="projects" className="text-2xl text-center">Lisa content</h1>
+          <VideoGallery videos={videos.regular}/>
+
+          <h1 className="text-2xl text-center">Animated content</h1>
+          <VideoGallery videos={videos.animatedDesign}/>
+
+          <h1 className="text-2xl text-center">Reviews</h1>
+          <VideoGallery videos={videos.animatedDesign}/>
+          
+          <h1 className="text-2xl text-center">Pricing</h1>
+          <div id="pricing" className='flex gap-20 flex-col md:flex-row'>
+          {
+            prices.map(price => (
+              <div id="price-card" className='bg-slate-500 w-2/3 mx-auto p-5 rounded-lg text-slate-200 md:w-1/3'>
+                <p className='text-2xl'>{price.name}</p>
+                <span className='text-4xl'>{price.price}</span>
+              </div>
+            ))
+          }
+          </div>
+
+          <div id="contact" className='flex flex-wrap justify-center gap-5 items-center w-full'>
+            <a href="mailto:irina@iripoliri.com">
+              <div className='bg-slate-400 px-5 py-2 rounded-lg w-full'>
+                <span className='font-bold'>irina@iripoliri.com</span>
+              </div>
+            </a>
+
+            <a href="https://www.linkedin.com/in/irina-poletaeva-60b388280/">
+              <div className='flex items-center gap-2'>
+                <img width={40} src={linkedin}/>
+              </div>
+            </a>
+
+            <a href="https://www.instagram.com/iripoliri/">
+              <div className='flex items-center gap-2'>
+                <img width={40} src={instagram}/>
+                <p className='font-bold'>@Iripoliri</p>
+              </div>
+            </a>
+          </div>
+          
         </div>
 
-        <div id="contact" className='flex gap-5 items-center'>
-          <a href="https://www.instagram.com/iripoliri/">
-            <div className='flex items-center gap-2'>
-              <img width={40} src={instagram}/>
-              <p className='font-bold'>@Iripoliri</p>
-            </div>
-          </a>
-
-          <a href="mailto:irina@iripoliri.com">
-            <div className='bg-slate-400 px-10 py-4 rounded-lg'>
-              <span className='font-bold'>irina@iripoliri.com</span>
-            </div>
-          </a>
-        </div>
-
-        <footer className='bg-slate-400 px-2 py-5 mt-5 w-full'>
+      </div>
+      <footer className='bg-slate-400 px-2 py-5 mt-5 w-full'>
             <p>Copyright © 2024, Irina Poletaeva</p>
         </footer>
-      </div>
       
     </main>
   )
