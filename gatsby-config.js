@@ -4,7 +4,7 @@
 module.exports = {
   siteMetadata: {
     title: `Iripoliri`,
-    siteUrl: `https://www.yourdomain.tld`
+    siteUrl: `https://iripoliri.com`
   },
   plugins: ["gatsby-plugin-sitemap", "gatsby-plugin-postcss"]
 };

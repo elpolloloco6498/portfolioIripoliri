@@ -136,8 +136,8 @@ I specialize in visual storytelling, using creative camera angles and dynamic vi
           >
             {videos.map((video) => (
               <SwiperSlide key={video.videoId}>
-                <div className="flex justify-center items-center h-full w-full">
-                  <VideoComponent videoId={video.videoId} cover={video.cover} title={video.title} desc={video.desc}/>
+                <div key={video.videoId} className="flex justify-center items-center h-full w-full">
+                  <VideoComponent key={video.videoId} videoId={video.videoId} cover={video.cover} title={video.title} desc={video.desc}/>
                 </div>
               </SwiperSlide>
             ))}
@@ -152,7 +152,7 @@ I specialize in visual storytelling, using creative camera angles and dynamic vi
   
     return (
       <div 
-        className="video-container relative w-60 aspect-[9/16]"
+        className="video-container relative w-80 aspect-[9/16]"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
