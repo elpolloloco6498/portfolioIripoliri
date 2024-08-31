@@ -55,32 +55,20 @@ const videos = {
     {
       "title": "Lisa content",
       "desc": "Description of lisa content",
-      "cover": "https://res.cloudinary.com/dracbyle6/image/upload/v1725102589/iripoliri/thumbnails/photo_2024-08-31_15-09-33_i1t38t.jpg",
-      "videoId": "iripoliri/animated/p6y7duacyr70pucqvyxw"
+      "cover": "https://res.cloudinary.com/dracbyle6/image/upload/v1725102589/iripoliri/thumbnails/photo_2024-08-31_15-09-24_phgqmj.jpg",
+      "videoId": "iripoliri/mdba1lecwe4dkwdjswgx"
     },
     {
       "title": "Lisa content",
       "desc": "Description of lisa content",
-      "cover": "https://res.cloudinary.com/dracbyle6/image/upload/v1725102589/iripoliri/thumbnails/photo_2024-08-31_15-09-33_i1t38t.jpg",
-      "videoId": "iripoliri/animated/zmeeciir2jvfus9lcloc"
+      "cover": "https://res.cloudinary.com/dracbyle6/image/upload/v1725102590/iripoliri/thumbnails/photo_2024-08-31_15-09-29_mpvvqc.jpg",
+      "videoId": "iripoliri/uos8eykf2ujhkfbp1o47"
     },
     {
       "title": "Lisa content",
       "desc": "Description of lisa content",
-      "cover": "https://res.cloudinary.com/dracbyle6/image/upload/v1725102589/iripoliri/thumbnails/photo_2024-08-31_15-09-33_i1t38t.jpg",
-      "videoId": "iripoliri/animated/pwxlysx4ppwcf1x1sate"
-    },
-    {
-      "title": "Lisa content",
-      "desc": "Description of lisa content",
-      "cover": "https://res.cloudinary.com/dracbyle6/image/upload/v1725102589/iripoliri/thumbnails/photo_2024-08-31_15-09-33_i1t38t.jpg",
-      "videoId": "iripoliri/animated/vubkhrrsvvguj6gsugka"
-    },
-    {
-      "title": "Lisa content",
-      "desc": "Description of lisa content",
-      "cover": "",
-      "videoId": "iripoliri/animated/cyjg4vwbnxuxkgn3v3yz"
+      "cover": "https://res.cloudinary.com/dracbyle6/image/upload/v1725102589/iripoliri/thumbnails/photo_2024-08-31_15-09-24_phgqmj.jpg",
+      "videoId": "iripoliri/uos8eykf2ujhkfbp1o47"
     }
   ],
   "review": [
