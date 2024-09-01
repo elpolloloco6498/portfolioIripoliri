@@ -1,12 +1,17 @@
 import React, { useState } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination } from 'swiper/modules';
+
 import { AdvancedVideo } from '@cloudinary/react';
 import { Cloudinary } from "@cloudinary/url-gen";
+import { videoCodec } from "@cloudinary/url-gen/actions/transcode";
+import { auto } from "@cloudinary/url-gen/qualifiers/videoCodec";
+import { scale } from "@cloudinary/url-gen/actions/resize";
+
 import logo from "../images/icon.png";
 import instagram from "../images/instagram.svg";
 import linkedin from "../images/linkedin.png";
 import portrait from "../images/portrait.jpeg";
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination } from 'swiper/modules';
 
 // Import Swiper styles
 import 'swiper/css';
@@ -135,26 +140,24 @@ const videos = {
   const VideoComponent = ({ videoId, cover, title, desc }) => {
     const [isHovered, setIsHovered] = useState(false);
   
+    const videoSource = cld.video(videoId)
+      .quality('auto')
+      .format('auto')
+      .transcode(videoCodec(auto()))
+      .resize(scale().width(480).height(854));
+  
     return (
       <div 
         className="video-container relative w-full md:w-[calc(25%-1rem)] aspect-[9/16] mb-6 overflow-hidden rounded-lg shadow-lg transition-transform duration-300 hover:scale-105"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
-        <AdvancedVideo 
-          className={`
-            w-full absolute top-0 left-0 transition-opacity duration-400 ease-in-out z-20
-            ${isHovered ? 'opacity-100' : 'opacity-0'}
-          `}
-          cldVid={cld.video(videoId).quality('auto')}
-          controls
-        />
         <div
           className={`
             absolute top-0 left-0 w-full h-full bg-cover bg-center transition-opacity duration-700 ease-in-out
             ${isHovered ? 'opacity-0' : 'opacity-100'}
           `}
-          style={{ backgroundImage: `url(${cover})`}}
+          style={{ backgroundImage: `url(${cover})` }}
         >
           <div className="absolute top-0 left-0 p-4 bg-slate-800 bg-opacity-80 text-white w-full">
             <h2 className="text-md font-bold text-center">{title}</h2>
@@ -163,6 +166,16 @@ const videos = {
             <p className="text-xs">{desc}</p>
           </div>
         </div>
+        <AdvancedVideo 
+          className={`
+            w-full h-full absolute top-0 left-0 transition-opacity duration-400 ease-in-out
+            ${isHovered ? 'opacity-100 z-20' : 'opacity-0 z-10'}
+          `}
+          cldVid={videoSource}
+          controls={isHovered}
+          preload="metadata"
+          poster={cover}
+        />
       </div>
     );
   };
