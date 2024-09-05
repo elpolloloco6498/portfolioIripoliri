@@ -30,66 +30,171 @@ const IndexPage = () => {
 I specialize in visual storytelling, using creative camera angles and dynamic video techniques to craft engaging videos. My work includes creating and editing posts and reels that are perfectly suited for social media, designed to boost online visibility. I also share this content with my network to further enhance the hotel's presence and attract more visitors.`;
 
 const videos = {
-  "regular": [
+  "nature": [
     {
-      "title": "Lisa content",
+      "title": "Canyon Dashbashi",
       "desc": "Description of lisa content",
-      "cover": "https://res.cloudinary.com/dracbyle6/image/upload/v1725102590/iripoliri/thumbnails/photo_2024-08-31_15-09-29_mpvvqc.jpg",
-      "videoId": "iripoliri/uos8eykf2ujhkfbp1o47"
+      "cover": "https://res.cloudinary.com/dracbyle6/image/upload/f_auto,q_auto/v1/iripoliri/thumbnails/canyon_dashbashi",
+      "videoId": "iripoliri/nature/canyon_dashbashi"
     },
     {
-      "title": "Lisa content",
+      "title": "Gomis Mta",
       "desc": "Description of lisa content",
-      "cover": "https://res.cloudinary.com/dracbyle6/image/upload/v1725102589/iripoliri/thumbnails/photo_2024-08-31_15-09-24_phgqmj.jpg",
-      "videoId": "iripoliri/mdba1lecwe4dkwdjswgx"
+      "cover": "https://res.cloudinary.com/dracbyle6/image/upload/f_auto,q_auto/v1/iripoliri/thumbnails/gomis_mta",
+      "videoId": "iripoliri/nature/gomis_mta"
     },
     {
-      "title": "Lisa content",
+      "title": "Banana Oasis",
       "desc": "Description of lisa content",
-      "cover": "https://res.cloudinary.com/dracbyle6/image/upload/v1725102590/iripoliri/thumbnails/photo_2024-08-31_15-09-29_mpvvqc.jpg",
-      "videoId": "iripoliri/uos8eykf2ujhkfbp1o47"
+      "cover": "https://res.cloudinary.com/dracbyle6/image/upload/f_auto,q_auto/v1/iripoliri/thumbnails/banana_oasis",
+      "videoId": "iripoliri/nature/banana_oasis"
     },
     {
-      "title": "Lisa content",
-      "desc": "Description of lisa content",
-      "cover": "https://res.cloudinary.com/dracbyle6/image/upload/v1725102589/iripoliri/thumbnails/photo_2024-08-31_15-09-24_phgqmj.jpg",
-      "videoId": "iripoliri/uos8eykf2ujhkfbp1o47"
-    }
-  ],
-  "animatedDesign": [
-    {
-      "title": "Lisa content",
-      "desc": "Description of lisa content",
-      "cover": "https://res.cloudinary.com/dracbyle6/image/upload/v1725102589/iripoliri/thumbnails/photo_2024-08-31_15-09-24_phgqmj.jpg",
-      "videoId": "iripoliri/mdba1lecwe4dkwdjswgx"
-    },
-    {
-      "title": "Lisa content",
-      "desc": "Description of lisa content",
-      "cover": "https://res.cloudinary.com/dracbyle6/image/upload/v1725102590/iripoliri/thumbnails/photo_2024-08-31_15-09-29_mpvvqc.jpg",
-      "videoId": "iripoliri/uos8eykf2ujhkfbp1o47"
-    },
-    {
-      "title": "Lisa content",
-      "desc": "Description of lisa content",
-      "cover": "https://res.cloudinary.com/dracbyle6/image/upload/v1725102589/iripoliri/thumbnails/photo_2024-08-31_15-09-24_phgqmj.jpg",
-      "videoId": "iripoliri/uos8eykf2ujhkfbp1o47"
-    }
-  ],
-  "review": [
-    {
-      "title": "Lisa content",
+      "title": "Gonio Fortress",
       "desc": "Description of lisa content",
       "cover": "",
-      "videoId": "iripoliri/animated/vubkhrrsvvguj6gsugka"
+      "videoId": "iripoliri/nature/gonio_fortress"
     },
     {
-      "title": "Lisa content",
+      "title": "Magnet sands",
+      "desc": "Description of lisa content",
+      "cover": "https://res.cloudinary.com/dracbyle6/image/upload/f_auto,q_auto/v1/iripoliri/thumbnails/magnet_sands",
+      "videoId": "iripoliri/nature/magnet_sands"
+    }
+  ],
+  "animated": [
+    {
+      "title": "Introduction",
       "desc": "Description of lisa content",
       "cover": "",
-      "videoId": "iripoliri/animated/cyjg4vwbnxuxkgn3v3yz"
+      "videoId": "iripoliri/animated content/intro"
+    },
+    {
+      "title": "Mold 1",
+      "desc": "Description of lisa content",
+      "cover": "",
+      "videoId": "iripoliri/animated content/mold_1"
+    },
+    {
+      "title": "Mold 2",
+      "desc": "Description of lisa content",
+      "cover": "",
+      "videoId": "iripoliri/animated content/mold_2"
+    },
+    {
+      "title": "My brain",
+      "desc": "Description of lisa content",
+      "cover": "",
+      "videoId": "iripoliri/animated content/lisa_brain"
+    },
+    {
+      "title": "Kobuleti",
+      "desc": "Description of lisa content",
+      "cover": "",
+      "videoId": "iripoliri/animated content/kobuleti"
     }
+  ],
+  "hotel cooperation": [
+    {
+      "title": "Cottage turo house",
+      "desc": "Description of lisa content",
+      "cover": "https://res.cloudinary.com/dracbyle6/image/upload/f_auto,q_auto/v1/iripoliri/thumbnails/turo_house",
+      "videoId": "iripoliri/hotels cooperations/turo_house"
+    },
+    {
+      "title": "Villa golden sunset",
+      "desc": "Description of lisa content",
+      "cover": "https://res.cloudinary.com/dracbyle6/image/upload/f_auto,q_auto/v1/iripoliri/thumbnails/villa_golden_sunset_review",
+      "videoId": "iripoliri/hotels cooperations/villa_golden_sunset"
+    },
+    {
+      "title": "Villa golden sunset, Bath time",
+      "desc": "Description of lisa content",
+      "cover": "https://res.cloudinary.com/dracbyle6/image/upload/f_auto,q_auto/v1/iripoliri/thumbnails/villa_golden_sunet_bath",
+      "videoId": "iripoliri/hotels cooperations/villa_golden_sunset_bath_time"
+    },
+    {
+      "title": "Hotel monument 1880",
+      "desc": "Description of lisa content",
+      "cover": "https://res.cloudinary.com/dracbyle6/image/upload/f_auto,q_auto/v1/iripoliri/thumbnails/hotel_monument_1880",
+      "videoId": "iripoliri/hotels cooperations/hotel_monument_1880"
+    },
+    {
+      "title": "Hotel mtirala",
+      "desc": "Description of lisa content",
+      "cover": "",
+      "videoId": "iripoliri/hotels cooperations/hotel_mtirala"
+    },
+    {
+      "title": "Hotel mtirala, tea time",
+      "desc": "Description of lisa content",
+      "cover": "",
+      "videoId": "iripoliri/hotels cooperations/hotel_mtirala_tea_time"
+    },
+    {
+      "title": "Cottage la familia",
+      "desc": "Description of lisa content",
+      "cover": "https://res.cloudinary.com/dracbyle6/image/upload/f_auto,q_auto/v1/iripoliri/thumbnails/la_familia_review",
+      "videoId": "iripoliri/hotels cooperations/la_familia_cottage"
+    },
+    {
+      "title": "Cottage la familia summer time",
+      "desc": "Description of lisa content",
+      "cover": "https://res.cloudinary.com/dracbyle6/image/upload/f_auto,q_auto/v1/iripoliri/thumbnails/la_familia_summer_time",
+      "videoId": "iripoliri/hotels cooperations/la_familia_cottage_summer_time"
+    },
+    {
+      "title": "Hotel graf Tbilisi",
+      "desc": "Description of lisa content",
+      "cover": "https://res.cloudinary.com/dracbyle6/image/upload/f_auto,q_auto/v1/iripoliri/thumbnails/hotel_graf_t",
+      "videoId": "iripoliri/hotels cooperations/hotel_graf_t"
+    },
+    {
+      "title": "Chateau iveri",
+      "desc": "Description of lisa content",
+      "cover": "https://res.cloudinary.com/dracbyle6/image/upload/f_auto,q_auto/v1/iripoliri/thumbnails/chateau_iveri",
+      "videoId": "iripoliri/hotels cooperations/chateau_iveri_bath_time"
+    },
+  ],
+  "humour": [
+    {
+      "title": "",
+      "desc": "Description of lisa content",
+      "cover": "",
+      "videoId": "iripoliri/humour content/cv0qsxxd0c2gwrpckijs"
+    },
+    {
+      "title": "",
+      "desc": "Description of lisa content",
+      "cover": "",
+      "videoId": "iripoliri/humour content/vboc8zx7hqgdboi1opjb"
+    },
+    {
+      "title": "",
+      "desc": "Description of lisa content",
+      "cover": "",
+      "videoId": "iripoliri/humour content/o7kb9pxvdclbklbzlrbb"
+    },
+    {
+      "title": "",
+      "desc": "Description of lisa content",
+      "cover": "",
+      "videoId": "iripoliri/humour content/ayfrz3obhdzb1kmhngxh"
+    },
+    {
+      "title": "",
+      "desc": "Description of lisa content",
+      "cover": "",
+      "videoId": "iripoliri/humour content/rn5j32mx4ys84wskg3al"
+    },
+    {
+      "title": "",
+      "desc": "Description of lisa content",
+      "cover": "",
+      "videoId": "iripoliri/humour content/ccjdq2hnuid8y3kcprvj"
+    },
   ]
+
 }
 
   const prices = [
@@ -155,9 +260,8 @@ const videos = {
         <div
           className={`
             absolute top-0 left-0 w-full h-full bg-cover bg-center transition-opacity duration-700 ease-in-out
-            ${isHovered ? 'opacity-0' : 'opacity-100'}
+            ${isHovered ? 'opacity-0 z-5' : 'opacity-100 z-30'}
           `}
-          style={{ backgroundImage: `url(${cover})` }}
         >
           <div className="absolute top-0 left-0 p-4 bg-slate-800 bg-opacity-80 text-white w-full">
             <h2 className="text-md font-bold text-center">{title}</h2>
@@ -169,7 +273,7 @@ const videos = {
         <AdvancedVideo 
           className={`
             w-full h-full absolute top-0 left-0 transition-opacity duration-400 ease-in-out
-            ${isHovered ? 'opacity-100 z-20' : 'opacity-0 z-10'}
+            ${isHovered ? 'z-20' : 'z-10'}
           `}
           cldVid={videoSource}
           controls={isHovered}
