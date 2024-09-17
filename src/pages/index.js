@@ -285,10 +285,10 @@ const videos = {
   };
 
   return (
-    <main className='bg-gradient-to-b from-gray-100 to-gray-200 min-h-screen  scroll-smooth'>
+    <main className='font-mulish bg-gradient-to-b from-gray-100 to-gray-200 min-h-screen scroll-smooth'>
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <nav className="py-6 flex justify-between items-center">
-          <p className="text-xl font-bold text-accent">Iripoliri</p>
+          <p className="font-prata text-xl font-bold text-accent">iripoliri</p>
           <ul className="hidden md:flex space-x-8">
             {['ABOUT', 'PROJECTS', 'PRICING', 'CONTACT'].map((item) => (
               <li key={item}>
@@ -299,20 +299,19 @@ const videos = {
         </nav>
 
         <header className="py-16 text-center">
-          <h1 className="text-4xl md:text-6xl font-bold text-gray-900 flex items-center justify-center flex-wrap">
-            IRIPOLIRI
+          <h1 className="font-prata text-4xl md:text-6xl text-gray-900 flex items-center justify-center flex-wrap">
+            iripoliri
             <img
               alt="Irina's Portrait"
               src={portrait}
               className="rounded-full w-32 h-32 mx-4 my-2 border-4 border-white shadow-lg"
             />
-            CREATIVE AGENCY
+            Creative Agency
           </h1>
         </header>
 
         <section className="mb-16">
           <div className='flex flex-col items-center mb-20'>
-            <h2 className='text-2xl font-semibold mb-4'>Contact me</h2>
             <div className='flex items-center space-x-3'>
               <a href="mailto:irina@iripoliri.com" className="bg-accent text-white px-6 py-3 rounded-lg shadow-md hover:bg-blue-700 transition-colors duration-300">
                 irina@iripoliri.com
@@ -328,21 +327,21 @@ const videos = {
           </div>
 
           <div id="about" className="mb-16">
-            <h2 className='text-3xl font-bold text-center text-secondary mb-6'>Who am I?</h2>
+            <h2 className='font-prata text-3xl text-center text-secondary mb-6'>Who am I ?</h2>
             <p className='max-w-3xl mx-auto text-lg text-gray-700 leading-relaxed text-justify'>{profilDescription}</p>
           </div>
 
           <div id="projects" className="mb-16">
             {Object.entries(videos).map(([category, videoList]) => (
               <div key={category} className="mb-12">
-                <h2 className="text-3xl font-bold text-center text-secondary mb-8">{category.charAt(0).toUpperCase() + category.slice(1)} Content</h2>
+                <h2 className="font-prata text-3xl font-bold text-center text-secondary mb-8">{category.charAt(0).toUpperCase() + category.slice(1)} Content</h2>
                 <VideoGallery videos={videoList} />
               </div>
             ))}
           </div>
 
           <div id="pricing" className="mb-16">
-            <h2 className="text-3xl font-bold text-center text-secondary mb-8">Pricing</h2>
+            <h2 className="font-prata text-3xl font-bold text-center text-secondary mb-8">Pricing</h2>
             <div className='grid grid-cols-1 md:grid-cols-3 gap-8'>
               {prices.map((price, index) => (
                 <div key={index} className='bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105'>

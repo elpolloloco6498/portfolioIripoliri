@@ -9,9 +9,12 @@ module.exports = {
       colors: {
         accent: "#ffb727",
         background: "#d8d5d200",
-        secondary: "#5b54cb"
-      }
-      
+        secondary: "#F46E8F"
+      },
+      fontFamily: {
+        prata: ['Prata', 'serif'],
+        mulish: ['Mulish', 'sans-serif'],
+      },
     },
   },
   plugins: [],
