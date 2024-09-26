@@ -2,12 +2,6 @@ import React, { useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
 
-import { AdvancedVideo } from '@cloudinary/react';
-import { Cloudinary } from "@cloudinary/url-gen";
-import { videoCodec } from "@cloudinary/url-gen/actions/transcode";
-import { auto } from "@cloudinary/url-gen/qualifiers/videoCodec";
-import { scale } from "@cloudinary/url-gen/actions/resize";
-
 import logo from "../images/icon.png";
 import instagram from "../images/instagram.svg";
 import linkedin from "../images/linkedin.png";
@@ -19,180 +13,183 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
 const IndexPage = () => {
-  const cld = new Cloudinary({
-    cloud: {
-      cloudName: 'dracbyle6'
-    }
-  });
 
   const profilDescription = `Hello! I'm Irina, a dedicated content creator with a passion for showcasing the unique charm of hotels. Over the past year, I've been collaborating with hotels to produce visually captivating content that highlights their establishments in the best light.
 
 I specialize in visual storytelling, using creative camera angles and dynamic video techniques to craft engaging videos. My work includes creating and editing posts and reels that are perfectly suited for social media, designed to boost online visibility. I also share this content with my network to further enhance the hotel's presence and attract more visitors.`;
+const stats = [
+  "https://iripoliri.b-cdn.net/stats/photo_2024-09-26_21-03-42.jpg",
+  "https://iripoliri.b-cdn.net/stats/photo_2024-09-26_21-03-28.jpg",
+  "https://iripoliri.b-cdn.net/stats/photo_2024-09-26_21-03-51.jpg",
+  "https://iripoliri.b-cdn.net/stats/photo_2024-09-26_21-04-13.jpg",
+  "https://iripoliri.b-cdn.net/stats/photo_2024-09-26_21-04-10.jpg",
+  "https://iripoliri.b-cdn.net/stats/photo_2024-09-26_21-03-48.jpg",
+  "https://iripoliri.b-cdn.net/stats/photo_2024-09-26_21-04-16.jpg",
+  "https://iripoliri.b-cdn.net/stats/photo_2024-09-26_21-04-04.jpg",
+  "https://iripoliri.b-cdn.net/stats/photo_2024-09-26_21-03-14.jpg",
+  "https://iripoliri.b-cdn.net/stats/photo_2024-09-26_21-04-07.jpg",
+]
 
 const videos = {
   "nature": [
     {
       "title": "Canyon Dashbashi",
       "desc": "Description of lisa content",
-      "cover": "https://res.cloudinary.com/dracbyle6/image/upload/f_auto,q_auto/v1/iripoliri/thumbnails/canyon_dashbashi",
-      "videoId": "iripoliri/nature/canyon_dashbashi"
+      "videoId": "9a5f4f29-1958-4e66-aa86-d5ebd70c8d57"
     },
     {
       "title": "Gomis Mta",
       "desc": "Description of lisa content",
-      "cover": "https://res.cloudinary.com/dracbyle6/image/upload/f_auto,q_auto/v1/iripoliri/thumbnails/gomis_mta",
-      "videoId": "iripoliri/nature/gomis_mta"
+      "videoId": "2f92725d-da15-49df-a2b3-e3e3209bdc28"
     },
     {
       "title": "Banana Oasis",
       "desc": "Description of lisa content",
-      "cover": "https://res.cloudinary.com/dracbyle6/image/upload/f_auto,q_auto/v1/iripoliri/thumbnails/banana_oasis",
-      "videoId": "iripoliri/nature/banana_oasis"
+      "videoId": "f53147d0-25c7-411f-b12a-ec21af126dd1"
     },
     {
       "title": "Gonio Fortress",
       "desc": "Description of lisa content",
-      "cover": "",
-      "videoId": "iripoliri/nature/gonio_fortress"
+      "videoId": "0f9392d6-0f9d-426f-814c-dbf0b6b8c0ae"
     },
     {
       "title": "Magnet sands",
       "desc": "Description of lisa content",
-      "cover": "https://res.cloudinary.com/dracbyle6/image/upload/f_auto,q_auto/v1/iripoliri/thumbnails/magnet_sands",
-      "videoId": "iripoliri/nature/magnet_sands"
+      "videoId": "12550f6c-3eff-4bb5-afa2-ddf7521f7aea"
+    },
+    {
+      "title": "Truso valley",
+      "desc": "Description of lisa content",
+      "videoId": "8e8a4601-ca34-4780-a438-7ddfe0c7f70d"
     }
   ],
   "animated": [
     {
       "title": "Introduction",
       "desc": "Description of lisa content",
-      "cover": "",
-      "videoId": "iripoliri/animated content/intro"
+      "videoId": "53d569bd-7d2f-48e4-9699-b1fa4ac01eca"
     },
     {
       "title": "Mold 1",
       "desc": "Description of lisa content",
-      "cover": "",
-      "videoId": "iripoliri/animated content/mold_1"
+      "videoId": "1e58fa3c-8bb3-4c79-83ac-fbe8e87ec3b6"
     },
     {
       "title": "Mold 2",
       "desc": "Description of lisa content",
-      "cover": "",
-      "videoId": "iripoliri/animated content/mold_2"
+      "videoId": "b56d4485-7804-4c00-95b5-660add00b55c"
     },
     {
       "title": "My brain",
       "desc": "Description of lisa content",
-      "cover": "",
-      "videoId": "iripoliri/animated content/lisa_brain"
+      "videoId": "c08c49d3-eb17-4d20-8ca6-e3b81da36de4"
     },
     {
       "title": "Kobuleti",
       "desc": "Description of lisa content",
-      "cover": "",
-      "videoId": "iripoliri/animated content/kobuleti"
+      "videoId": "0c44ae4e-83cd-49d3-8396-790b85bf65c1"
+    },
+    {
+      "title": "Frog animated",
+      "desc": "Description of lisa content",
+      "videoId": "99377dca-1b9d-4adb-8e3e-c8fb060f980b"
     }
   ],
   "hotel cooperation": [
     {
       "title": "Cottage turo house",
       "desc": "Description of lisa content",
-      "cover": "https://res.cloudinary.com/dracbyle6/image/upload/f_auto,q_auto/v1/iripoliri/thumbnails/turo_house",
-      "videoId": "iripoliri/hotels cooperations/turo_house"
+      "videoId": "840bc3f4-20d7-448a-9682-8c719af514ef"
     },
     {
       "title": "Villa golden sunset",
       "desc": "Description of lisa content",
-      "cover": "https://res.cloudinary.com/dracbyle6/image/upload/f_auto,q_auto/v1/iripoliri/thumbnails/villa_golden_sunset_review",
-      "videoId": "iripoliri/hotels cooperations/villa_golden_sunset"
-    },
-    {
-      "title": "Villa golden sunset, Bath time",
-      "desc": "Description of lisa content",
-      "cover": "https://res.cloudinary.com/dracbyle6/image/upload/f_auto,q_auto/v1/iripoliri/thumbnails/villa_golden_sunet_bath",
-      "videoId": "iripoliri/hotels cooperations/villa_golden_sunset_bath_time"
+      "videoId": "33321eac-8612-4fec-868f-85d5f239c436"
     },
     {
       "title": "Hotel monument 1880",
       "desc": "Description of lisa content",
-      "cover": "https://res.cloudinary.com/dracbyle6/image/upload/f_auto,q_auto/v1/iripoliri/thumbnails/hotel_monument_1880",
-      "videoId": "iripoliri/hotels cooperations/hotel_monument_1880"
+      "videoId": "ab280622-cfc2-4729-ad01-65548bb28410"
     },
     {
       "title": "Hotel mtirala",
       "desc": "Description of lisa content",
-      "cover": "",
-      "videoId": "iripoliri/hotels cooperations/hotel_mtirala"
-    },
-    {
-      "title": "Hotel mtirala, tea time",
-      "desc": "Description of lisa content",
-      "cover": "",
-      "videoId": "iripoliri/hotels cooperations/hotel_mtirala_tea_time"
+      "videoId": "cdc97df2-8b6c-4d5a-a5bf-c06def5f0651"
     },
     {
       "title": "Cottage la familia",
       "desc": "Description of lisa content",
-      "cover": "https://res.cloudinary.com/dracbyle6/image/upload/f_auto,q_auto/v1/iripoliri/thumbnails/la_familia_review",
-      "videoId": "iripoliri/hotels cooperations/la_familia_cottage"
-    },
-    {
-      "title": "Cottage la familia summer time",
-      "desc": "Description of lisa content",
-      "cover": "https://res.cloudinary.com/dracbyle6/image/upload/f_auto,q_auto/v1/iripoliri/thumbnails/la_familia_summer_time",
-      "videoId": "iripoliri/hotels cooperations/la_familia_cottage_summer_time"
+      "videoId": "10be96db-de7a-4a4b-91d4-7e851c5a6bef"
     },
     {
       "title": "Hotel graf Tbilisi",
       "desc": "Description of lisa content",
-      "cover": "https://res.cloudinary.com/dracbyle6/image/upload/f_auto,q_auto/v1/iripoliri/thumbnails/hotel_graf_t",
-      "videoId": "iripoliri/hotels cooperations/hotel_graf_t"
-    },
-    {
-      "title": "Chateau iveri",
-      "desc": "Description of lisa content",
-      "cover": "https://res.cloudinary.com/dracbyle6/image/upload/f_auto,q_auto/v1/iripoliri/thumbnails/chateau_iveri",
-      "videoId": "iripoliri/hotels cooperations/chateau_iveri_bath_time"
+      "videoId": "4d587210-b4f6-4c1b-9403-f1c6b746064f"
     },
   ],
   "humour": [
     {
       "title": "",
       "desc": "Description of lisa content",
-      "cover": "",
-      "videoId": "iripoliri/humour content/cv0qsxxd0c2gwrpckijs"
+      "videoId": "2ac435b2-0617-4b56-b879-4ad316d2c1e3"
     },
     {
       "title": "",
       "desc": "Description of lisa content",
-      "cover": "",
-      "videoId": "iripoliri/humour content/vboc8zx7hqgdboi1opjb"
+      "videoId": "deb2f6b6-1cf0-4a83-a4ad-383e7d69d414"
     },
     {
       "title": "",
       "desc": "Description of lisa content",
-      "cover": "",
-      "videoId": "iripoliri/humour content/o7kb9pxvdclbklbzlrbb"
+      "videoId": "cb44e9fd-6fe9-460f-a671-03db641a5ad7"
     },
     {
       "title": "",
       "desc": "Description of lisa content",
-      "cover": "",
-      "videoId": "iripoliri/humour content/ayfrz3obhdzb1kmhngxh"
+      "videoId": "4fb5af73-4e7e-4f4c-951f-95ad782ba328"
     },
     {
       "title": "",
       "desc": "Description of lisa content",
-      "cover": "",
-      "videoId": "iripoliri/humour content/rn5j32mx4ys84wskg3al"
+      "videoId": "74daf718-3fb6-4290-9f24-3fca2364040a"
     },
     {
       "title": "",
       "desc": "Description of lisa content",
-      "cover": "",
-      "videoId": "iripoliri/humour content/ccjdq2hnuid8y3kcprvj"
+      "videoId": "7c6fcfac-6bed-4f88-a5d5-9ba83fdcafee"
     },
+  ],
+  "aesthetic": [
+    {
+      "title": "",
+      "desc": "Description of lisa content",
+      "videoId": "0cdcc127-cb79-4fdc-8ec0-457579a28559"
+    },
+    {
+      "title": "",
+      "desc": "Description of lisa content",
+      "videoId": "5addc853-1af7-45d1-9b39-4292e2f37563"
+    },
+    {
+      "title": "",
+      "desc": "Description of lisa content",
+      "videoId": "8503ff49-05a8-4883-a596-10dfa223a44e"
+    },
+    {
+      "title": "",
+      "desc": "Description of lisa content",
+      "videoId": "c137d024-b454-4435-8d4b-2f7f83eaf11a"
+    },
+    {
+      "title": "",
+      "desc": "Description of lisa content",
+      "videoId": "74e6caa7-b321-4b70-91b7-ab2c6b9e6b8d"
+    },
+    {
+      "title": "",
+      "desc": "Description of lisa content",
+      "videoId": "7b2fc7ab-005c-45ca-ae83-16d4742afe4f"
+    }
   ]
 
 }
@@ -217,7 +214,7 @@ const videos = {
       <>
         <div className="hidden w-full justify-center md:flex md:flex-wrap md:gap-6">
           {videos.map(video => (
-            <VideoComponent key={video.videoId} videoId={video.videoId} cover={video.cover} title={video.title} desc={video.desc}/>
+            <VideoComponent key={video.videoId} videoId={video.videoId} title={video.title} desc={video.desc}/>
           ))}
         </div>
         <div className="w-full md:hidden">
@@ -232,7 +229,7 @@ const videos = {
             {videos.map((video) => (
               <SwiperSlide key={video.videoId}>
                 <div className="flex justify-center items-center h-full w-full">
-                  <VideoComponent key={video.videoId} videoId={video.videoId} cover={video.cover} title={video.title} desc={video.desc}/>
+                  <VideoComponent key={video.videoId} videoId={video.videoId} title={video.title} desc={video.desc}/>
                 </div>
               </SwiperSlide>
             ))}
@@ -242,44 +239,17 @@ const videos = {
     )
   };
 
-  const VideoComponent = ({ videoId, cover, title, desc }) => {
-    const [isHovered, setIsHovered] = useState(false);
-  
-    const videoSource = cld.video(videoId)
-      .quality('auto')
-      .format('auto')
-      .transcode(videoCodec(auto()))
-      .resize(scale().width(480).height(854));
-  
+  const VideoComponent = ({ videoId, title, desc }) => {
     return (
-      <div 
-        className="video-container relative w-full md:w-[calc(25%-1rem)] aspect-[9/16] mb-6 overflow-hidden rounded-lg shadow-lg transition-transform duration-300 hover:scale-105"
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-      >
-        <div
-          className={`
-            absolute top-0 left-0 w-full h-full bg-cover bg-center transition-opacity duration-700 ease-in-out
-            ${isHovered ? 'opacity-0 z-5' : 'opacity-100 z-30'}
-          `}
-        >
-          <div className="absolute top-0 left-0 p-4 bg-slate-800 bg-opacity-80 text-white w-full">
-            <h2 className="text-md font-bold text-center">{title}</h2>
-          </div>
-          <div className="absolute bottom-0 left-0 p-4 bg-slate-800 bg-opacity-60 text-white w-full">
-            <p className="text-xs">{desc}</p>
-          </div>
-        </div>
-        <AdvancedVideo 
-          className={`
-            w-full h-full absolute top-0 left-0 transition-opacity duration-400 ease-in-out
-            ${isHovered ? 'z-20' : 'z-10'}
-          `}
-          cldVid={videoSource}
-          controls={isHovered}
-          preload="metadata"
-          poster={cover}
-        />
+      <div className='rounded-lg' style={{ aspectRatio: '9 / 16', position: 'relative', overflow: 'hidden' }}>
+        <iframe 
+          id={`video-${videoId}`}
+          src={`https://iframe.mediadelivery.net/embed/310366/${videoId}?autoplay=false&loop=false&muted=false&preload=true&responsive=true&controls=0`} 
+          loading="lazy" 
+          style={{ height: '100%', width: '100%' }} 
+          allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;" 
+          allowFullScreen={true}
+        ></iframe>
       </div>
     );
   };
@@ -309,7 +279,7 @@ const videos = {
             Creative Agency
           </h1>
         </header>
-
+        
         <section className="mb-16">
           <div className='flex flex-col items-center mb-20'>
             <div className='flex items-center space-x-3'>
@@ -338,6 +308,15 @@ const videos = {
                 <VideoGallery videos={videoList} />
               </div>
             ))}
+          </div>
+
+          <div id="projects" className="mb-16">
+            <h2 className="font-prata text-3xl font-bold text-center text-secondary mb-8">My Statistics</h2>
+            <div className="w-full justify-center md:flex md:flex-wrap md:gap-6">
+              {stats.map((statUrl, index) => (
+                <img key={index} className='rounded-lg hover:scale-105 transition-transform duration-200' src={statUrl} style={{width: '200px', height: 'auto', marginBottom: '10px'}}/>
+              ))}
+            </div>
           </div>
 
           <div id="pricing" className="mb-16">
@@ -370,3 +349,4 @@ const videos = {
 export default IndexPage;
 
 export const Head = () => <title>Iripoliri Creative Agency</title>;
+
